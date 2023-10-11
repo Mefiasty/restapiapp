@@ -5,6 +5,6 @@
 @layer base {
   body {
     @apply bg-emerald-900 bg-cover bg-blend-exclusion bg-no-repeat min-h-screen;
-    background-image: url("/test.png");
+    background-image: url("/test.webp");
   }
 }
