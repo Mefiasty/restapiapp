@@ -24,11 +24,13 @@ function App() {
       link: "#",
     },
   ];
+
   const [isMenuActive, setIsMenuActive] = useState(false);
   const test = useRef(null);
   const handleClik = () => {
     setIsMenuActive(!isMenuActive);
     setTimeout(() => {
+      //@ts-ignore
       const width = test.current.offsetWidth;
       gsap.fromTo(
         test.current,
@@ -40,6 +42,7 @@ function App() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 768) {
+        //@ts-ignore
         test.current.style = "";
       }
     };
@@ -67,7 +70,7 @@ function App() {
           </ul>
         </nav>
         <button className="md:hidden mt-2" onClick={() => handleClik()}>
-          <span class="material-symbols-outlined">menu</span>
+          <span className="material-symbols-outlined">menu</span>
         </button>
       </div>
       <div className="">
@@ -77,57 +80,93 @@ function App() {
         >
           <div className=" text-center">
             <h1 className="font-bold text-4xl md:text-9xl">Ditto</h1>
+
             <img
-              src={characters.sprites?.front_default}
-              alt={characters.name}
+              src={
+                //@ts-ignore
+                characters.sprites?.front_default
+              }
+              alt={
+                //@ts-ignore
+                characters.name
+              }
               className=" h-48 w-48  border-4 md:border-0 md:w-2/6 md:h-2/6 border-sky-900  mx-auto "
             />
             <div className="md:w-3/5 w-48 inline-block justify-center relative">
               <h2 className="border-2  border-sky-900 text-stone-50 bg-sky-900 bg-opacity-70 ">
-                Name: {characters.name}
+                Name:{" "}
+                {
+                  //@ts-ignore
+                  characters.name
+                }
               </h2>
               <h2 className="border-2  border-sky-900 text-stone-50  bg-sky-900 bg-opacity-70 ">
-                Height: {characters.height}
+                Height:{" "}
+                {
+                  //@ts-ignore
+                  characters.height
+                }
               </h2>
               <h2 className="border-2  border-sky-900 text-stone-50  bg-sky-900 bg-opacity-70 ">
-                Weight: {characters.weight}
+                Weight:{" "}
+                {
+                  //@ts-ignore
+                  characters.weight
+                }
               </h2>
               <h2 className="border-2  border-sky-900 text-stone-50  bg-sky-900 bg-opacity-70 ">
-                Base Experience: {characters.base_experience}
+                Base Experience:{" "}
+                {
+                  //@ts-ignore
+                  characters.base_experience
+                }
               </h2>
               <h2 className="border-2  border-sky-900 text-stone-50  bg-sky-900 bg-opacity-70 ">
                 Abilities:
               </h2>
               <ul className="border-2  border-sky-900 text-stone-50  bg-sky-900 bg-opacity-70">
-                {characters.abilities?.map((item) => (
-                  <li key={item.ability.name}>{item.ability.name}</li>
-                ))}
+                {
+                  //@ts-ignore
+                  characters.abilities?.map((item) => (
+                    <li key={item.ability.name}>{item.ability.name}</li>
+                  ))
+                }
               </ul>
               <h2 className="border-2  border-sky-900 text-stone-50  bg-sky-900 bg-opacity-70">
                 Moves:
               </h2>
+
               <ul className="border-2  border-sky-900 text-stone-50  bg-sky-900 bg-opacity-70">
-                {characters.moves?.map((item) => (
-                  <li key={item.move.name}>{item.move.name}</li>
-                ))}
+                {
+                  //@ts-ignore
+                  characters.moves?.map((item) => (
+                    <li key={item.move.name}>{item.move.name}</li>
+                  ))
+                }
               </ul>
               <h2 className="border-2  border-sky-900 text-stone-50  bg-sky-900 bg-opacity-70">
                 Types:
               </h2>
               <ul className="border-2  border-sky-900 text-stone-50  bg-sky-900 bg-opacity-70">
-                {characters.types?.map((item) => (
-                  <li key={item.type.name}>{item.type.name}</li>
-                ))}
+                {
+                  //@ts-ignore
+                  characters.types?.map((item) => (
+                    <li key={item.type.name}>{item.type.name}</li>
+                  ))
+                }
               </ul>
               <h2 className="border-2  border-sky-900 text-stone-50  bg-sky-900 bg-opacity-70">
                 Stats:
               </h2>
               <ul className="border-2  border-sky-900 text-stone-50  bg-sky-900 bg-opacity-70">
-                {characters.stats?.map((item) => (
-                  <li key={item.stat.name}>
-                    ⚔ {item.stat.name}: {item.base_stat} ⚔
-                  </li>
-                ))}
+                {
+                  //@ts-ignore
+                  characters.stats?.map((item) => (
+                    <li key={item.stat.name}>
+                      ⚔ {item.stat.name}: {item.base_stat} ⚔
+                    </li>
+                  ))
+                }
               </ul>
             </div>
           </div>
