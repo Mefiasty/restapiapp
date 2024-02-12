@@ -172,7 +172,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="bg-black text-white absolute bottom-0">
+      <div className="bg-black text-white absolute bottom-0 w-full">
         Api used to create this page:{" "}
         <a href="https://pokeapi.co/" className="hover:text-red-700">
           PokeApi
